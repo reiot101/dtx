@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package packet;
+
+option go_package = ".;packet";
+
+message StateEnum {
+  enum State {
+    UNKNOWN = 0;
+    BEGIN = 1;
+    END = 2;
+    ABOUT = 3;
+    COMMIT = 4;
+    ROLLBACK = 5;
+  }
+}
+
+message TxLog {
+  string id = 1;
+  StateEnum.State state = 2;
+  string task = 3;
+  string type = 4;
+  bytes data = 5;
+  int64 timestamp = 6;
+  string error_message = 7;
+}

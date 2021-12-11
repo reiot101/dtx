@@ -1,2 +1,2 @@
 # dtx
-simple distributed transaction
+distributed transaction
